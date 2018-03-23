@@ -1,5 +1,9 @@
 # Singularity r-base
 
+[![https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg](https://www.singularity-hub.org/static/img/hosted-singularity--hub-%23e32929.svg)](https://singularity-hub.org/collections/795)
+[![GitHub License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
+
 Singularity image for [R](https://www.r-project.org/) based on the [r-base](https://hub.docker.com/_/r-base/) docker image.
 
 ## Build
@@ -8,6 +12,15 @@ You can build a local Singularity image named `r-base.3.4.4.simg` with:
 
 ```
 $ sudo -E singularity build --force r-base.3.4.4.simg Singularity
+```
+
+## Deploy
+
+Instead of building it yourself you can download the pre-built image from
+[Singularity Hub](https://www.singularity-hub.org) with:
+
+```bash
+singularity pull --name r-base.3.4.4.simg shub://mjstealey/r-base
 ```
 
 ## Usage
@@ -32,7 +45,7 @@ $ singularity help r-base.3.4.4.simg
 
 ### R
 
-The R command is launched using the default run command:
+The `R` command is launched using the default run command:
 
 ```bash
 singularity run r-base.3.4.4.simg [args]
@@ -61,7 +74,7 @@ http://www.gnu.org/licenses/.
 
 ### Rscript
 
-The Rscript command is launched as an explicit app:
+The `Rscript` command is launched as an explicit app:
 
 ```bash
 singularity run --app Rscript r-base.3.4.4.simg [args]
